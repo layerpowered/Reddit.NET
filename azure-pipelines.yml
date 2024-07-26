@@ -33,10 +33,10 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.csproj'
     versioningScheme: 'off'
-    buildProperties: '-SkipDuplicate'
 - task: NuGetCommand@2
   inputs:
     command: 'push'
     packagesToPush: '$(build.artifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: 'ac92c2ee-d578-444e-9fe0-e56922b14a2c/8b1a28d9-dbbb-4fcb-866b-dc78241fd89e'
+    allowPackageConflicts: true
