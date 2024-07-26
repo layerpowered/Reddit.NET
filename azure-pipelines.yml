@@ -33,6 +33,7 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.csproj'
     versioningScheme: 'off'
+    buildProperties: '-SkipDuplicate'
 - task: NuGetCommand@2
   inputs:
     command: 'push'
